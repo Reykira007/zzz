@@ -1,0 +1,7 @@
+<resources>
+    <string name="app">Pariwisata APP</string>
+    <string name="menu_food">Food</string>
+    <string name="menu_hotel">Hotel</string>
+    <string name="menu_rent">Rent</string>
+    <string name="menu_info">Information</string>
+</resources>
