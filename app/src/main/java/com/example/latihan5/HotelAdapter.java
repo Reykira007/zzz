@@ -9,18 +9,18 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.List;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHolder> {
-    private List<FoodPost> dataList;
+public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.CustomViewHolder> {
+    private List<HotelPost> dataList;
     private Context context;
     private NumberFormat formatRupiah;
 
-    public FoodAdapter(Context context, List<FoodPost> dataList) {
+    public HotelAdapter(Context context, List<HotelPost> dataList) {
         this.context = context;
         this.dataList = dataList;
         this.formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
@@ -28,37 +28,39 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        TextView namaMakanan, lokasiToko, hargaMakanan, deskripsiMakanan;
-        private ImageView converimgFood;
+        TextView namaHotel, bintangHotel, lokasiHotel, hargaHotel, deskripsiHotel;
+        private ImageView converimgHotel;
 
         CustomViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
 
-            lokasiToko = mView.findViewById(R.id.lokasi_toko);
-            namaMakanan = mView.findViewById(R.id.nama_makanan);
-            hargaMakanan = mView.findViewById(R.id.harga_makanan);
-            converimgFood = mView.findViewById(R.id.foto_makanan);
-            deskripsiMakanan = mView.findViewById(R.id.deskripsi_makanan);
+            lokasiHotel = mView.findViewById(R.id.lokasi_hotel);
+            namaHotel = mView.findViewById(R.id.nama_hotel);
+            bintangHotel = mView.findViewById(R.id.bintang_hotel);
+            hargaHotel = mView.findViewById(R.id.harga_hotel);
+            converimgHotel = mView.findViewById(R.id.foto_hotel);
+            deskripsiHotel = mView.findViewById(R.id.deskripsi_hotel);
         }
     }
 
     @Override
-    public FoodAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HotelAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_food, parent, false);
-        return new FoodAdapter.CustomViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.item_hotel, parent, false);
+        return new HotelAdapter.CustomViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(FoodAdapter.CustomViewHolder holder, int position) {
-        holder.lokasiToko.setText(dataList.get(position).getLokasiToko());
-        holder.namaMakanan.setText(dataList.get(position).getNamaMakanan());
-        holder.deskripsiMakanan.setText(dataList.get(position).getDeskripsiMakanan());
+    public void onBindViewHolder(HotelAdapter.CustomViewHolder holder, int position) {
+        holder.lokasiHotel.setText(dataList.get(position).getLokasi());
+        holder.namaHotel.setText(dataList.get(position).getNamaHotel());
+        holder.bintangHotel.setText(dataList.get(position).getBintang());
+        holder.deskripsiHotel.setText(dataList.get(position).getDeskripsi());
 
         // Format harga ke dalam format Rupiah
-        String harga = formatHargaRupiah(dataList.get(position).getHargaMakanan());
-        holder.hargaMakanan.setText(harga);
+        String harga = formatPrice(dataList.get(position).getRangeHarga());
+        holder.hargaHotel.setText(harga);
     }
 
     @Override
@@ -66,12 +68,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.CustomViewHold
         return dataList.size();
     }
 
-    public void updateData(List<FoodPost> newData) {
+    public void updateData(List<HotelPost> newData) {
         this.dataList = newData;
         notifyDataSetChanged();
     }
 
-    public static String formatHargaRupiah(String price) {
+    public static String formatPrice(String price) {
         try {
             DecimalFormat formatter = new DecimalFormat("#,###");
             formatter.setDecimalFormatSymbols(new DecimalFormatSymbols(new Locale("id", "ID")));

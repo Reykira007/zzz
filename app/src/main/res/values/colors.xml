@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#FF5722</color>          <!-- Warna oranye hangat - mencerminkan makanan -->
+    <color name="primary_dark">#E64A19</color>     <!-- Warna oranye lebih gelap untuk status bar -->
+    <color name="primary_light">#FFCCBC</color>    <!-- Warna oranye muda untuk aksen ringan -->
+    <color name="accent">#FFC107</color>           <!-- Warna kuning untuk aksen -->
+
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_50">#FAFAFA</color>          <!-- Background paling terang -->
+    <color name="gray_100">#F5F5F5</color>         <!-- Background item -->
+    <color name="gray_200">#EEEEEE</color>         <!-- Divider/border ringan -->
+    <color name="gray_300">#E0E0E0</color>         <!-- Border -->
+    <color name="gray_400">#BDBDBD</color>         <!-- Disabled text -->
+    <color name="gray_500">#9E9E9E</color>         <!-- Placeholder text -->
+    <color name="gray_600">#757575</color>         <!-- Secondary text -->
+    <color name="gray_700">#616161</color>         <!-- Primary text -->
+    <color name="gray_800">#424242</color>         <!-- Heading text -->
+    <color name="gray_900">#212121</color>         <!-- Dark text -->
+
+    <!-- Status/Feedback Colors -->
+    <color name="success">#4CAF50</color>          <!-- Sukses/Berhasil -->
+    <color name="error">#F44336</color>            <!-- Error/Gagal -->
+    <color name="warning">#FF9800</color>          <!-- Peringatan -->
+    <color name="info">#2196F3</color>             <!-- Informasi -->
+
+    <!-- Background Colors -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#FAFAFA</color>
+    <color name="background_card">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>     <!-- Teks utama -->
+    <color name="text_secondary">#757575</color>   <!-- Teks sekunder -->
+    <color name="text_tertiary">#9E9E9E</color>    <!-- Teks tersier -->
+    <color name="text_white">#FFFFFF</color>       <!-- Teks putih -->
+
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#80000000</color>
+
+    <!-- Special Purpose Colors -->
+    <color name="ripple">#33000000</color>         <!-- Efek ripple -->
+    <color name="scrim">#99000000</color>          <!-- Overlay gelap -->
+    <color name="divider">#1F000000</color>        <!-- Garis pemisah -->
+
+    <!-- Rating Colors -->
+    <color name="rating_active">#FFC107</color>    <!-- Bintang aktif -->
+    <color name="rating_inactive">#D6D6D6</color>  <!-- Bintang tidak aktif -->
 </resources>
